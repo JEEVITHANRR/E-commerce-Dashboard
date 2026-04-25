@@ -1,3 +1,6 @@
+<img width="1381" height="756" alt="Screenshot 2026-04-25 at 2 21 56 PM" src="https://github.com/user-attachments/assets/751d792d-6c72-4aae-a843-10013cfa7161" />
+<img width="1381" height="752" alt="Screenshot 2026-04-25 at 2 21 37 PM" src="https://github.com/user-attachments/assets/2839ab96-de65-4302-9537-29a4569e8df8" />
+<img width="1380" height="758" alt="Screenshot 2026-04-25 at 2 21 15 PM" src="https://github.com/user-attachments/assets/92147c2d-11bf-4b34-8952-f3811c8f88ad" />
 # NexaCommerce Intelligence — E-Commerce Command Center
 
 A high-fidelity, real-time sales intelligence dashboard designed for e-commerce operators. It features predictive analytics, live data streaming, and a high-performance 3D visualization engine.
@@ -49,6 +52,4 @@ ecommerce-dashboard/
 ## 📄 License
 
 MIT License. Designed and Built by [Jeevithan R R](https://github.com/jeevithan).
-<img width="1381" height="756" alt="Screenshot 2026-04-25 at 2 21 56 PM" src="https://github.com/user-attachments/assets/751d792d-6c72-4aae-a843-10013cfa7161" />
-<img width="1381" height="752" alt="Screenshot 2026-04-25 at 2 21 37 PM" src="https://github.com/user-attachments/assets/2839ab96-de65-4302-9537-29a4569e8df8" />
-<img width="1380" height="758" alt="Screenshot 2026-04-25 at 2 21 15 PM" src="https://github.com/user-attachments/assets/92147c2d-11bf-4b34-8952-f3811c8f88ad" />
+
