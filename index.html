@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaCommerce Intelligence | E-Commerce Sales Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loading">
+  <div class="load-logo">NEXA<span>//</span>COMMERCE</div>
+  <div class="load-bar-wrap"><div class="load-bar" id="lbar"></div></div>
+  <div class="load-txt" id="ltxt">INITIALIZING INTELLIGENCE MATRIX...</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <div class="nav-logo">NEXA<span>//</span>COMMERCE</div>
+  <div class="nav-r">
+    <div class="live-pill"><div class="live-dot"></div>LIVE FEED</div>
+    <div class="timer-pill" id="timer">REFRESH IN 30s</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-vignette"></div>
+  <canvas id="c3d"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">◆ E-COMMERCE INTELLIGENCE DASHBOARD v2.0 ◆</div>
+    <h1 class="hero-h1">SALES INTELLIGENCE<br>COMMAND CENTER</h1>
+    <p class="hero-sub">// REAL-TIME ANALYTICS &nbsp;·&nbsp; PREDICTIVE INSIGHTS &nbsp;·&nbsp; LIVE DATA STREAMS</p>
+    <div class="hero-live">
+      <div class="live-dot" style="background:var(--green);box-shadow:0 0 8px var(--green)"></div>
+      LIVE · Powered by FakeStore API · Refreshes every 30 seconds
+    </div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dash">
+
+  <!-- KPI SECTION -->
+  <div class="sec-head">
+    <span class="sec-lbl">01 // KEY PERFORMANCE INDICATORS</span>
+    <div class="sec-line"></div>
+    <span class="sec-ts" id="ts">—</span>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi" style="--c1:var(--blue);--c2:var(--purple)" id="k0">
+      <span class="kpi-ico">⚡</span>
+      <div class="kpi-lbl">Total Revenue</div>
+      <div class="kpi-val c-blue" id="v-rev">$0.00</div>
+      <div class="kpi-trend up">↑ Live from product catalog</div>
+    </div>
+    <div class="kpi" style="--c1:var(--pink);--c2:var(--purple)" id="k1">
+      <span class="kpi-ico">📦</span>
+      <div class="kpi-lbl">Total Products</div>
+      <div class="kpi-val c-pink" id="v-prod">0</div>
+      <div class="kpi-trend up">↑ Full catalog active</div>
+    </div>
+    <div class="kpi" style="--c1:var(--gold);--c2:#f97316" id="k2">
+      <span class="kpi-ico">🛒</span>
+      <div class="kpi-lbl">Cart Abandonment Rate</div>
+      <div class="kpi-val c-gold" id="v-aband">0%</div>
+      <div class="kpi-trend neu">→ Industry avg: 69.8%</div>
+    </div>
+    <div class="kpi" style="--c1:var(--green);--c2:#06b6d4" id="k3">
+      <span class="kpi-ico">💎</span>
+      <div class="kpi-lbl">Avg Customer LTV</div>
+      <div class="kpi-val c-green" id="v-ltv">$0</div>
+      <div class="kpi-trend up">↑ 12.4% vs last month</div>
+    </div>
+    <div class="kpi" style="--c1:#a78bfa;--c2:var(--blue)" id="k4">
+      <span class="kpi-ico">📊</span>
+      <div class="kpi-lbl">Live Orders (Today)</div>
+      <div class="kpi-val c-pur" id="v-ord">0</div>
+      <div class="kpi-trend up">↑ Real-time order stream</div>
+    </div>
+    <div class="kpi" style="--c1:var(--pink);--c2:var(--gold)" id="k5">
+      <span class="kpi-ico">💳</span>
+      <div class="kpi-lbl">Avg Order Value</div>
+      <div class="kpi-val c-pink" id="v-aov">$0.00</div>
+      <div class="kpi-trend up">↑ 8.2% vs last week</div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="sec-head" style="margin-top:1rem">
+    <span class="sec-lbl">02 // DATA VISUALIZATIONS</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="chart-grid">
+    <div class="card" id="ch0">
+      <div class="card-ttl">TOP 5 SKUs BY REVENUE</div>
+      <canvas id="chart-sku"></canvas>
+    </div>
+    <div class="card" id="ch1">
+      <div class="card-ttl">CUSTOMER LTV TREND (12 MONTHS)</div>
+      <canvas id="chart-ltv"></canvas>
+    </div>
+    <div class="card wide" id="ch2">
+      <div class="card-ttl">SALES HEATMAP — CATEGORY × TIME SLOT</div>
+      <div class="heat-wrap">
+        <div id="heatmap"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEED + SIMULATOR -->
+  <div class="sec-head">
+    <span class="sec-lbl">03 // LIVE ORDER FEED &amp; WHAT-IF SIMULATOR</span>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="bottom-grid">
+    <!-- LIVE FEED -->
+    <div class="feed-card">
+      <div class="card-ttl" style="margin-bottom:.75rem">LIVE ORDER FEED</div>
+      <div class="feed-list" id="feed"></div>
+    </div>
+    <!-- SIMULATOR -->
+    <div class="sim-card">
+      <div class="card-ttl" style="margin-bottom:0">WHAT-IF REVENUE SIMULATOR</div>
+      <div class="sim-desc">
+        Adjust business levers below to model revenue scenarios. Watch KPIs and the projection chart update in real time as you drag the sliders.
+      </div>
+      <div class="slider-blk">
+        <div class="slider-hd">
+          <span class="s-lbl">CART ABANDONMENT REDUCTION</span>
+          <span class="s-val c-blue" id="sv-a">0%</span>
+        </div>
+        <input type="range" class="slider-a" id="sl-a" min="0" max="60" value="0">
+      </div>
+      <div class="slider-blk">
+        <div class="slider-hd">
+          <span class="s-lbl">AVG ORDER VALUE INCREASE</span>
+          <span class="s-val c-gold" id="sv-b">0%</span>
+        </div>
+        <input type="range" class="slider-b" id="sl-b" min="0" max="50" value="0">
+      </div>
+      <div class="slider-blk">
+        <div class="slider-hd">
+          <span class="s-lbl">TRAFFIC VOLUME BOOST</span>
+          <span class="s-val c-pink" id="sv-c">0%</span>
+        </div>
+        <input type="range" class="slider-c" id="sl-c" min="0" max="100" value="0">
+      </div>
+      <div class="sim-results">
+        <div class="sim-box">
+          <div class="sim-box-lbl">Current Revenue</div>
+          <div class="sim-box-val c-blue" id="sr-cur">$0</div>
+        </div>
+        <div class="sim-box">
+          <div class="sim-box-lbl">Projected Revenue</div>
+          <div class="sim-box-val c-green" id="sr-proj">$0</div>
+        </div>
+        <div class="sim-box">
+          <div class="sim-box-lbl">Revenue Uplift</div>
+          <div class="sim-box-val c-pink" id="sr-up">+$0</div>
+        </div>
+        <div class="sim-box">
+          <div class="sim-box-lbl">Uplift %</div>
+          <div class="sim-box-val c-gold" id="sr-pct">+0%</div>
+        </div>
+      </div>
+      <canvas id="chart-sim" style="max-height:130px"></canvas>
+    </div>
+  </div>
+
+  <div class="footer">
+    NEXACOMMERCE INTELLIGENCE DASHBOARD &nbsp;·&nbsp;
+    <span style="color:var(--blue)">DATA: FAKESTOREAPI.COM</span> &nbsp;·&nbsp;
+    <span style="color:var(--pink)">REAL-TIME ANALYTICS ENGINE v2.0</span> &nbsp;·&nbsp;
+    PORTFOLIO PROJECT — DATA ANALYST
+  </div>
+</section>
+
+<!-- Custom Logic -->
+<script src="js/script.js"></script>
+</body>
+</html>

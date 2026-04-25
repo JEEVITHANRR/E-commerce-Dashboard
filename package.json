@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce-dashboard",
+  "version": "2.0.0",
+  "description": "NexaCommerce Intelligence — High-fidelity E-commerce sales dashboard.",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ecommerce",
+    "dashboard",
+    "analytics",
+    "threejs",
+    "chartjs"
+  ],
+  "author": "Jeevithan R R",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
