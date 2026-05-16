@@ -1,51 +1,36 @@
-# NexaCommerce Intelligence — E-Commerce Command Center
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A high-fidelity, real-time sales intelligence dashboard designed for e-commerce operators. It features predictive analytics, live data streaming, and a high-performance 3D visualization engine.
+## Getting Started
 
-![NexaCommerce Dashboard](public/screenshot.png) *(Note: Add a real screenshot after deployment)*
+First, run the development server:
 
-## 🚀 Features
-
-- **Intelligence Command Center**: Real-time KPI tracking for revenue, products, abandonment, and LTV.
-- **Predictive "What-If" Simulator**: Interactive sliders to model revenue scenarios and calculate potential uplift.
-- **Live Order Feed**: Real-time transaction streaming with status tracking.
-- **3D Hero Scene**: Custom WebGL/Three.js particle system with interactive box geometries.
-- **Data Visualizations**: 
-  - Top SKUs by Revenue (Bar Chart)
-  - Customer LTV Trends (Line Chart)
-  - Category × Time Sales Heatmap
-
-## 🛠️ Technology Stack
-
-- **Framework**: No framework, built with Vanilla HTML5, CSS3, and ES6+ JS.
-- **Graphics**: 
-  - [Three.js](https://threejs.org/) (Custom 3D Environment)
-  - [Chart.js](https://www.chartjs.org/) (Interactive Business Analytics)
-  - [GSAP](https://greensock.com/gsap/) (UI Orchestration & Animations)
-- **API**: Integration with [FakeStoreAPI](https://fakestoreapi.com/) for dynamic product metadata.
-
-## 📁 Project Structure
-
-```text
-ecommerce-dashboard/
-├── css/
-│   └── style.css      # Custom design system with glassmorphism
-├── js/
-│   └── script.js     # Analytics logic, 3D scene, and API integration
-├── index.html        # Main entry point
-├── README.md         # Project documentation
-└── .gitignore        # Git configuration
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🖥️ Getting Started
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/ecommerce-dashboard.git
-   ```
-2. Open `index.html` in your browser.
-3. Access the intelligence matrix.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## 📄 License
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-MIT License. Designed and Built by [Jeevithan R R](https://github.com/jeevithan).
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

@@ -1,21 +1,16 @@
 {
   "name": "ecommerce-dashboard",
   "version": "2.0.0",
-  "description": "NexaCommerce Intelligence — High-fidelity E-commerce sales dashboard.",
-  "main": "index.html",
+  "private": true,
   "scripts": {
-    "start": "npx serve ."
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "dev:client": "next dev",
+    "dev:server": "cd server && npm run dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [
-    "ecommerce",
-    "dashboard",
-    "analytics",
-    "threejs",
-    "chartjs"
-  ],
-  "author": "Jeevithan R R",
-  "license": "MIT",
-  "devDependencies": {
-    "serve": "^14.2.1"
+  "dependencies": {
+    "concurrently": "^8.2.2"
   }
 }
