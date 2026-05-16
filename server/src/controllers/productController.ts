@@ -51,3 +51,20 @@ export const deleteProduct = async (req: Request, res: Response) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
+export const seedProducts = async (req: any, res: any) => {
+    try {
+        await Product.deleteMany({});
+        const demoProducts = [
+            { name: "Pro Studio Headphones", price: 299, category: "Electronics", stock: 45, status: "active" },
+            { name: "Minimalist Leather Bag", price: 150, category: "Fashion", stock: 30, status: "active" },
+            { name: "Ergonomic Desk Chair", price: 450, category: "Home", stock: 12, status: "active" },
+            { name: "Wireless Mechanical Keyboard", price: 180, category: "Electronics", stock: 55, status: "active" },
+            { name: "Silk Sleeping Mask", price: 35, category: "Beauty", stock: 100, status: "active" }
+        ];
+        await Product.insertMany(demoProducts);
+        res.json({ message: "Database seeded successfully!" });
+    } catch (error) {
+        res.status(500).json({ message: "Seeding failed" });
+    }
+};
