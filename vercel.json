@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://e-commerce-dashboard-production-2ecc.up.railway.app/api/:path*"
+    }
+  ]
+}
