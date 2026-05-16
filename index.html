@@ -3,149 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxeCommerce Intelligence | Premium Sales Dashboard</title>
+    <title>Indigo Commerce Intelligence | Enterprise Dashboard</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-    
-    <!-- Custom Styles -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="nav">
-  <div class="nav-logo">LUXE<span>COMMERCE</span></div>
-  <div class="nav-r">
-    <div class="live-pill"><div class="live-dot"></div>LIVE INTELLIGENCE</div>
-    <div class="user-profile" style="display:flex; align-items:center; gap:12px; cursor:pointer;">
-      <div style="text-align:right;">
-        <div style="font-size:0.85rem; font-weight:700;">Jeevithan RR</div>
-        <div style="font-size:0.7rem; color:var(--text-muted);">Administrator</div>
-      </div>
-      <div style="width:40px; height:40px; border-radius:12px; background:var(--primary); display:flex; align-items:center; justify-content:center; color:white; font-weight:900;">J</div>
-    </div>
-  </div>
-</nav>
+    <!-- Modern Floating Sidebar -->
+    <aside class="sidebar">
+        <div class="brand-section">
+            <div class="logo-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <span class="brand-name">Indigo Commerce</span>
+        </div>
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
-  <a href="#" class="side-link active">
-    <span>📊</span> Dashboard
-  </a>
-  <a href="#" class="side-link">
-    <span>📦</span> Products
-  </a>
-  <a href="#" class="side-link">
-    <span>🛒</span> Orders
-  </a>
-  <a href="#" class="side-link">
-    <span>👥</span> Customers
-  </a>
-  <a href="#" class="side-link">
-    <span>📈</span> Analytics
-  </a>
-  <div style="margin-top:auto; padding-top:2rem; border-top:1px solid var(--glass-border);">
-    <a href="#" class="side-link">
-      <span>⚙️</span> Settings
-    </a>
-  </div>
-</aside>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="#" class="nav-link active">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Orders</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
 
-<!-- MAIN CONTENT -->
-<main id="dash">
-  <header class="sec-head">
-    <span class="sec-lbl">Overview / Analytics</span>
-    <h1 class="hero-h1">Commerce Command Center</h1>
-    <p style="color:var(--text-muted); font-weight:500;">Real-time sales intelligence & predictive forecasting</p>
-  </header>
+        <div class="sidebar-footer" style="margin-top: auto;">
+            <a href="#" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
 
-  <!-- KPI GRID -->
-  <section class="kpi-grid">
-    <div class="kpi" id="kpi-revenue">
-      <div class="kpi-lbl">Total Gross Revenue</div>
-      <div class="kpi-val" id="v-rev">$128,492.00</div>
-      <div class="kpi-trend up">↑ 12.4% <span style="color:var(--text-muted); font-weight:400; margin-left:4px;">vs last month</span></div>
-    </div>
-    <div class="kpi" id="kpi-orders">
-      <div class="kpi-lbl">Total Active Orders</div>
-      <div class="kpi-val" id="v-ord">1,842</div>
-      <div class="kpi-trend up">↑ 8.2% <span style="color:var(--text-muted); font-weight:400; margin-left:4px;">vs last week</span></div>
-    </div>
-    <div class="kpi" id="kpi-ltv">
-      <div class="kpi-lbl">Avg. Customer LTV</div>
-      <div class="kpi-val" id="v-ltv">$420.50</div>
-      <div class="kpi-trend up">↑ 5.1% <span style="color:var(--text-muted); font-weight:400; margin-left:4px;">vs last year</span></div>
-    </div>
-    <div class="kpi" id="kpi-conv">
-      <div class="kpi-lbl">Conversion Rate</div>
-      <div class="kpi-val" id="v-conv">3.8%</div>
-      <div class="kpi-trend down">↓ 0.4% <span style="color:var(--text-muted); font-weight:400; margin-left:4px;">vs yesterday</span></div>
-    </div>
-  </section>
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Top Navbar -->
+        <header class="top-header">
+            <div class="search-bar">
+                <i class="fas fa-search" style="color: var(--text-secondary);"></i>
+                <input type="text" placeholder="Search orders, products or customers...">
+            </div>
 
-  <!-- CHARTS SECTION -->
-  <div class="chart-grid">
-    <section class="card">
-      <div class="card-ttl">Sales Revenue Trend</div>
-      <canvas id="salesChart" style="height:300px;"></canvas>
-    </section>
-    <section class="card">
-      <div class="card-ttl">Top Categories</div>
-      <canvas id="categoryChart" style="height:300px;"></canvas>
-    </section>
-  </div>
+            <div class="header-actions">
+                <div class="action-btn">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="action-btn">
+                    <i class="fas fa-message"></i>
+                </div>
+                <div class="user-profile">
+                    <div class="user-avatar"></div>
+                    <div class="user-info">
+                        <p class="user-name">Jeevithan R R</p>
+                    </div>
+                    <i class="fas fa-chevron-down" style="font-size: 10px; color: var(--text-secondary);"></i>
+                </div>
+            </div>
+        </header>
 
-  <!-- RECENT ORDERS TABLE -->
-  <section class="card">
-    <div class="card-ttl">Recent Transactions</div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Customer</th>
-            <th>Product</th>
-            <th>Amount</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="order-table-body">
-          <tr class="data-row">
-            <td>#LX-9921</td>
-            <td style="font-weight:600;">Sophia Anderson</td>
-            <td>Premium Silk Blouse</td>
-            <td style="font-weight:700;">$189.00</td>
-            <td><span class="status-pill status-shipped">Shipped</span></td>
-          </tr>
-          <tr class="data-row">
-            <td>#LX-9920</td>
-            <td style="font-weight:600;">Marcus Wright</td>
-            <td>Leather Tech Briefcase</td>
-            <td style="font-weight:700;">$345.00</td>
-            <td><span class="status-pill status-pending">Processing</span></td>
-          </tr>
-          <tr class="data-row">
-            <td>#LX-9919</td>
-            <td style="font-weight:600;">Elena Rodriguez</td>
-            <td>Minimalist Gold Watch</td>
-            <td style="font-weight:700;">$890.00</td>
-            <td><span class="status-pill status-shipped">Shipped</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+        <!-- KPI Grid -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon" style="background: rgba(79, 70, 229, 0.1); color: var(--primary-brand);">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>12.5%</span>
+                    </div>
+                </div>
+                <div class="kpi-value">$128,430</div>
+                <div class="kpi-label">Total Revenue</div>
+            </div>
 
-</main>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon" style="background: rgba(249, 115, 22, 0.1); color: var(--accent);">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>8.2%</span>
+                    </div>
+                </div>
+                <div class="kpi-value">1,429</div>
+                <div class="kpi-label">Total Orders</div>
+            </div>
 
-<!-- Custom Logic -->
-<script src="js/script.js"></script>
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--success);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="trend up">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>24.1%</span>
+                    </div>
+                </div>
+                <div class="kpi-value">856</div>
+                <div class="kpi-label">New Customers</div>
+            </div>
+
+            <div class="kpi-card">
+                <div class="kpi-header">
+                    <div class="kpi-icon" style="background: rgba(239, 68, 68, 0.1); color: var(--danger);">
+                        <i class="fas fa-percent"></i>
+                    </div>
+                    <div class="trend down">
+                        <i class="fas fa-arrow-down"></i>
+                        <span>1.4%</span>
+                    </div>
+                </div>
+                <div class="kpi-value">3.2%</div>
+                <div class="kpi-label">Conversion Rate</div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-grid">
+            <div class="chart-card">
+                <h3 class="chart-title">Revenue Forecast</h3>
+                <div style="height: 320px;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Top Categories</h3>
+                <div style="height: 320px;">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="data-table-container">
+            <div class="table-header">
+                <h3 class="chart-title" style="margin-bottom: 0;">Recent Transactions</h3>
+                <button class="action-btn" style="width: auto; padding: 0 16px; border-radius: 8px; font-size: 14px; font-weight: 600;">View All</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer</th>
+                        <th>Product</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTable">
+                    <!-- JS will populate -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
-

@@ -1,30 +1,31 @@
-# LuxeCommerce Design System
+# Enterprise Indigo Design System
 
 ## Brand Identity
-LuxeCommerce Intelligence is a premium AI-powered commerce platform focused on high-end SaaS aesthetics: minimal, elegant, and data-driven.
+A premium enterprise-grade E-Commerce Admin Dashboard designed for high-growth brands. Inspired by industry leaders like Stripe, Shopify, and Linear.
 
 ## Color Palette
 | Token | Hex | Name | Usage |
 | :--- | :--- | :--- | :--- |
-| **Primary** | `#5B3DF5` | Deep Plum | Brand color, buttons, active states, key accents |
-| **Accent** | `#FF6B6B` | Vibrant Coral | High-priority alerts, highlights, secondary brand color |
-| **Success** | `#22C55E` | Mint Green | Profit indicators, positive trends, success states |
-| **Background** | `#EEF2F7` | Mist Silver | Main application background |
-| **Surface** | `#E7EAF3` | Lavender Gray | Secondary backgrounds, panel surfaces |
-| **Text Main** | `#1F2937` | Graphite Black | Headlines, body copy, high-readability text |
-| **Text Muted** | `#6B7280` | Muted Slate | Sub-labels, helper text, inactive states |
+| **Primary** | `#4F46E5` | Indigo | Main brand color, buttons, active states |
+| **Accent** | `#F97316` | Orange | High-priority accents, secondary charts |
+| **Success** | `#10B981` | Emerald | Success states, positive trends |
+| **Danger** | `#EF4444` | Red | Errors, negative trends, deletions |
+| **Background** | `#F5F7FA` | Slate Gray | Main application background |
+| **Surface** | `#EEF1F6` | Light Blue | Secondary surfaces, hover states |
+| **Text Primary** | `#111827` | Graphite | Headlines, main content |
+| **Text Secondary** | `#6B7280` | Muted Gray | Sub-labels, helper text |
 
 ## Typography
-- **Display/Headlines:** `Satoshi` or `General Sans` (900 weight for headers)
-- **Data/Body:** `Inter` (Standard weight for readability, 700 for data points)
+- **Primary Font:** `Plus Jakarta Sans` (Used for headlines and UI elements for a modern feel)
+- **Secondary Font:** `Inter` (Used for data-heavy sections for maximum readability)
 
 ## UI Language
-- **Glassmorphism:** 20px backdrop-blur on cards and sidebars.
-- **Corner Radius:** `24px` for main containers, `12px` for inner elements.
-- **Shadows:** Soft, deep plum tinted shadows (`rgba(91, 61, 245, 0.08)`).
-- **Interactive:** GSAP-powered transitions, hover scales (1.01x), and smooth card reveals.
+- **Corner Radius:** `16px` for main cards/containers, `8px` for inner elements.
+- **Shadows:** Soft, layered shadows (`var(--shadow-lg)`) for depth.
+- **Borders:** Subtle `1px` borders in `#E5E7EB` for definition.
+- **Interactions:** GSAP-powered reveals and smooth hover micro-interactions.
 
-## Component Standards
-- **Cards:** Semi-transparent white (`rgba(255, 255, 255, 0.7)`) with white borders.
-- **Status Pills:** High-contrast background with 10% opacity of the status color.
-- **Charts:** Clean line charts with gradients and minimal grid lines.
+## Layout Standards
+- **Sidebar:** Floating design with consistent spacing and clear active indicators.
+- **Grid:** 24px/40px spacing system for a breathable, professional layout.
+- **Charts:** Minimalist Chart.js implementations with custom Indigo/Orange gradients.

@@ -16,3 +16,4 @@ yarn-debug.log*
 # Production
 dist/
 build/
+.vercel
