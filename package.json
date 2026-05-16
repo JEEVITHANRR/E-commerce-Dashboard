@@ -29,6 +29,7 @@
     "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "framer-motion": "^12.38.0",
     "jsonwebtoken": "^9.0.3",
@@ -43,5 +44,8 @@
     "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.1"
   }
 }
